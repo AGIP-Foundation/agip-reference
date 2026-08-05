@@ -1,8 +1,8 @@
 """Typed domain models for executable graphology rules."""
 
+from collections.abc import Mapping
 from dataclasses import dataclass
 from enum import StrEnum
-from typing import Mapping
 
 type ScalarValue = str | int | float | bool
 
