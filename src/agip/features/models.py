@@ -2,7 +2,6 @@
 
 from dataclasses import dataclass
 
-
 type ScalarValue = str | int | float | bool
 
 
