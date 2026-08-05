@@ -21,7 +21,9 @@ def test_rule_returns_explainable_outcome_when_all_conditions_match() -> None:
         rule_id="graphology.self_control.001",
         conditions=(
             RuleCondition("pressure", ComparisonOperator.EQUALS, "regular"),
-            RuleCondition("baseline_stability", ComparisonOperator.GREATER_THAN_OR_EQUAL, 0.7),
+            RuleCondition(
+                "baseline_stability", ComparisonOperator.GREATER_THAN_OR_EQUAL, 0.7
+            ),
         ),
         outcome=outcome,
         priority=10,
@@ -39,7 +41,9 @@ def test_rule_returns_none_when_a_condition_does_not_match() -> None:
     rule = GraphologyRule(
         rule_id="graphology.energy.001",
         conditions=(RuleCondition("pressure", ComparisonOperator.EQUALS, "strong"),),
-        outcome=RuleOutcome("energy", 0.6, 0.7, "Strong pressure may support vitality."),
+        outcome=RuleOutcome(
+            "energy", 0.6, 0.7, "Strong pressure may support vitality."
+        ),
     )
 
     assert rule.evaluate({"pressure": "light"}) is None
