@@ -1,12 +1,11 @@
 """Core data models used by the inference engine."""
 
 from dataclasses import dataclass
-from typing import TypeAlias
 
 from agip.domain import Trait
 
-ObservationValue: TypeAlias = str | int | float | bool
-Observations: TypeAlias = dict[str, ObservationValue]
+type ObservationValue = str | int | float | bool
+type Observations = dict[str, ObservationValue]
 
 
 @dataclass(frozen=True, slots=True)
