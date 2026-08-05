@@ -41,7 +41,9 @@ class RuleCondition:
             return actual != self.expected
         if not isinstance(actual, (int, float)) or isinstance(actual, bool):
             return False
-        if not isinstance(self.expected, (int, float)) or isinstance(self.expected, bool):
+        if not isinstance(self.expected, (int, float)) or isinstance(
+            self.expected, bool
+        ):
             return False
         if self.operator is ComparisonOperator.GREATER_THAN:
             return actual > self.expected
